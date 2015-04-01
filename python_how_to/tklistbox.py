@@ -54,7 +54,7 @@ class ScrolledList(Frame):
     def processList(self, event):
         index = self.listbox.curselection()               
         label = self.listbox.get(index)  
-        self.passed_function(label)                 
+        self.passed_function((index,label))                 
                            
     
                            
@@ -65,7 +65,8 @@ class PrintThis(object):
         pass
     
     def print_this(self,selection):
-        print 'You so selected this:', selection
+        (ind , lbl) = selection
+        print 'You so selected this:', lbl, "from ",ind[0]
             
     
         
