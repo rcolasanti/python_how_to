@@ -22,18 +22,19 @@
 #  
 #  
 
-from os import listdir
+from os import listdir,getcwd
 from os.path import isfile, join
 
 
 def main():
-    mypath = "/home/pi/Downloads/"
+    #mypath = "/home/pi/Downloads/"
+    mypath = getcwd()
     for filename in listdir(mypath):
         # just get the files
         # note that it has to have the compleate path and name
          if isfile(join(mypath,filename)):
              # split the file name in to parts 
-             filename = f.split('.')
+             parts = filename.split('.')
              print parts[-1]
     return 0
 
