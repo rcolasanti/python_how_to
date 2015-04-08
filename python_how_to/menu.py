@@ -27,12 +27,14 @@
 
 from Tkinter import *
 from tkFileDialog   import askopenfilename
+from os import path as path
 
 def NewFile():
     print "New File!"
 def OpenFile():
     name = askopenfilename()
-    print name
+    (fname,fpath)=path.split(name)
+    print fname,"  :  ",fpath
 def About():
     print "This is a simple example of a menu"
     
